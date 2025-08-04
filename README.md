@@ -2,6 +2,10 @@
 
 Este proyecto tiene como objetivo brindar mayor autonomía y seguridad a personas invidentes al momento de cruzar una calle con semáforo. Utiliza dos dispositivos **ESP32**: uno ubicado en el semáforo y otro en una pulsera o dispositivo portátil del usuario invidente. También se emplea una aplicación móvil Android que actúa como brújula, rastreador y puente de comunicación con familiares.
 
+![Versión](https://img.shields.io/badge/versión-2.0.5-blue)  
+![Estado](https://img.shields.io/badge/estado-en%20prototipo-yellow)  
+![Licencia](https://img.shields.io/badge/licencia-MIT-green)
+
 ---
 
 ## 🧠 Funcionalidades principales
