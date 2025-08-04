@@ -1,6 +1,6 @@
 # ACPI: Asistente de Cruce Peatonal para Invidentes 🚦👨‍🦯‍➡️
 
-Este proyecto tiene como objetivo brindar mayor autonomía y seguridad a personas invidentes al momento de cruzar una calle con semáforo. Utiliza dos dispositivos **ESP32**: uno ubicado en el semáforo y otro en una pulsera o dispositivo portátil del usuario invidente. También se emplea una aplicación móvil Android que actúa como brújula, rastreador y puente de comunicación con familiares.
+Este proyecto tiene como objetivo brindar mayor autonomía y seguridad a personas invidentes al momento de cruzar una calle con semáforo. Utiliza dos dispositivos **ESP32**: uno ubicado en el semáforo y otro en una pulsera del usuario invidente. También se emplea una aplicación móvil Android que actúa como brújula, rastreador y comunicador con familiares del usuario.
 
 ![Versión](https://img.shields.io/badge/versión-2.0.5-blue)  
 ![Estado](https://img.shields.io/badge/estado-en%20prototipo-yellow)  
@@ -24,7 +24,7 @@ Este proyecto tiene como objetivo brindar mayor autonomía y seguridad a persona
 
 ### 📍 Localización y seguridad
 - La app Android envía automáticamente la ubicación en tiempo real cada 15 minutos vía Telegram a un familiar o contacto de confianza.
-- Se notifica la salida del usuario de un perímetro definido (como el hogar).
+- Se notifica la salida del usuario de un área definida como su hogar.
 
 ---
 
