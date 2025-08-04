@@ -1,4 +1,4 @@
-# ACPI: Asistente de Cruce Peatonal para Invidentes
+# ACPI: Asistente de Cruce Peatonal para Invidentes 🚦👨‍🦯‍➡️
 
 Este proyecto tiene como objetivo brindar mayor autonomía y seguridad a personas invidentes al momento de cruzar una calle con semáforo. Utiliza dos dispositivos **ESP32**: uno ubicado en el semáforo y otro en una pulsera o dispositivo portátil del usuario invidente. También se emplea una aplicación móvil Android que actúa como brújula, rastreador y puente de comunicación con familiares.
 
@@ -28,6 +28,18 @@ Este proyecto tiene como objetivo brindar mayor autonomía y seguridad a persona
 
 ---
 
+## 🧪 Prototipos Anteriores 
+- Antes de llegar a trabajar la versión final, realizamos un prototipo antiguo que consistía en el mismo funcionamiento pero en el ambiente de Microbit - Python. Este era más simple, ya que no contaba con el uso de brújula, ni la aplicación y estaba implementada en un bastón.
+🔗 
+<img width="494" height="529" alt="image" src="https://github.com/user-attachments/assets/4720d02c-78aa-47c8-bcb3-a7cb67a1c43c" />
+
+### 📸 Capturas Actuales
+
+<img width="529" alt="image" src="https://github.com/user-attachments/assets/de0256ff-53d7-4e37-957a-6dc584ca8b16" />
+<img  height="529" alt="image" src="https://github.com/user-attachments/assets/00307fd2-0fc5-4078-9920-436631502279" />
+
+
+---
 ## ⚙️ Requisitos de hardware
 
 - 2 × ESP32 con WiFi + Bluetooth
@@ -71,9 +83,9 @@ Este es un proyecto académico abierto al aprendizaje. Puedes contribuir con mej
 
 ---
 
-## 🧑‍💻 Autor
+## 🧑‍💻 Autores
 
-Desarrollado por Dilan Sanit como parte de un proyecto de grado técnico.  
-Asesorado por profesores del área tecnológica.
+Desarrollado por Dilan Osorio, Andrea Cárdenas y Nicolás Rodríguez como parte de un proyecto de grado técnico.  
+Asesorado por la docente del área Johanna Carolina Sánchez Ramírez.
 
 ---
