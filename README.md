@@ -33,6 +33,7 @@ Este proyecto tiene como objetivo brindar mayor autonomía y seguridad a persona
 🔗 
 <img width="494" height="529" alt="image" src="https://github.com/user-attachments/assets/4720d02c-78aa-47c8-bcb3-a7cb67a1c43c" />
 (Primer diseño del proyecto, usando microbit e implementandolo en el bastón)
+
 ### 📸 Capturas Actuales
 
 <img width="529" alt="image" src="https://github.com/user-attachments/assets/de0256ff-53d7-4e37-957a-6dc584ca8b16" />
