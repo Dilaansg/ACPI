@@ -32,12 +32,13 @@ Este proyecto tiene como objetivo brindar mayor autonomía y seguridad a persona
 - Antes de llegar a trabajar la versión final, realizamos un prototipo antiguo que consistía en el mismo funcionamiento pero en el ambiente de Microbit - Python. Este era más simple, ya que no contaba con el uso de brújula, ni la aplicación y estaba implementada en un bastón.
 🔗 
 <img width="494" height="529" alt="image" src="https://github.com/user-attachments/assets/4720d02c-78aa-47c8-bcb3-a7cb67a1c43c" />
-
+(Primer diseño del proyecto, usando microbit e implementandolo en el bastón)
 ### 📸 Capturas Actuales
 
 <img width="529" alt="image" src="https://github.com/user-attachments/assets/de0256ff-53d7-4e37-957a-6dc584ca8b16" />
+(Componente ESP32)
 <img  height="529" alt="image" src="https://github.com/user-attachments/assets/00307fd2-0fc5-4078-9920-436631502279" />
-
+(Referencia del diseño de la aplicación)
 
 ---
 ## ⚙️ Requisitos de hardware
