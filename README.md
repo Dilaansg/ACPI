@@ -4,7 +4,9 @@ Este proyecto tiene como objetivo brindar mayor autonomía y seguridad a persona
 
 ![Versión](https://img.shields.io/badge/versión-2.0.5-blue)  
 ![Estado](https://img.shields.io/badge/estado-en%20prototipo-yellow)  
-![Licencia](https://img.shields.io/badge/licencia-MIT-green)
+![Licencia](https://img.shields.io/badge/licencia-MIT-green)<br>
+<img width="600" height="355" alt="image" src="https://github.com/user-attachments/assets/3d3c16ef-f4fe-4246-87d1-1e000d5f8a1c" />
+
 
 ---
 
@@ -32,14 +34,22 @@ Este proyecto tiene como objetivo brindar mayor autonomía y seguridad a persona
 - Antes de llegar a trabajar la versión final, realizamos un prototipo antiguo que consistía en el mismo funcionamiento pero en el ambiente de Microbit - Python. Este era más simple, ya que no contaba con el uso de brújula, ni la aplicación y estaba implementada en un bastón.
 🔗 
 <img width="494" height="529" alt="image" src="https://github.com/user-attachments/assets/4720d02c-78aa-47c8-bcb3-a7cb67a1c43c" />
+
 (Primer diseño del proyecto, usando microbit e implementandolo en el bastón)
 
 ### 📸 Capturas Actuales
+<img width="529" height="960" alt="image" src="https://github.com/user-attachments/assets/9a2ec6c0-0977-4555-b5bd-2af31e452708" /><br>
+(Referencia del diseño de la pulsera)
 
-<img width="529" alt="image" src="https://github.com/user-attachments/assets/de0256ff-53d7-4e37-957a-6dc584ca8b16" />
+<img width="529" alt="image" src="https://github.com/user-attachments/assets/de0256ff-53d7-4e37-957a-6dc584ca8b16" /><br>
 (Componente ESP32)
-<img  height="529" alt="image" src="https://github.com/user-attachments/assets/00307fd2-0fc5-4078-9920-436631502279" />
-(Referencia del diseño de la aplicación)
+
+<img  height="529" alt="image" src="https://github.com/user-attachments/assets/00307fd2-0fc5-4078-9920-436631502279" /><br>
+(Referencia del diseño de la aplicación                )
+
+<img width="529" height="510" alt="image" src="https://github.com/user-attachments/assets/16a6f681-7dcb-4a7b-b878-278d1721fa58" /><br>
+(Referencia del espacio de proyecto)
+
 
 ---
 ## ⚙️ Requisitos de hardware
