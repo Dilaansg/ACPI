@@ -7,7 +7,9 @@ El sistema combina **hardware dedicado (ESP32)** y una **aplicación móvil inte
 ![Estado](https://img.shields.io/badge/estado-en%20prototipo-yellow)  
 ![Licencia](https://img.shields.io/badge/licencia-MIT-green)  
 
-<img width="300" height="100" alt="image" src="(https://github.com/user-attachments/assets/5ae23bf0-dc78-44a2-8649-234e68ff17b6" />
+<img src="https://github.com/user-attachments/assets/931d2c0d-2025-4e66-b3d7-121c94d1c3a1" alt="LOGO" width="200"/>
+
+
 
 
 
@@ -100,5 +102,5 @@ Se agradecen aportes en:
 
 ## 🧑‍💻 Autores
 Proyecto desarrollado por:  
-###**Dilan Osorio, Andrea Cárdenas y Nicolás Rodríguez**  
+**Dilan Osorio, Andrea Cárdenas y Nicolás Rodríguez**  
 📚 Asesoría: *Johanna Carolina Sánchez Ramírez*  
