@@ -81,10 +81,10 @@ Este era más simple y no incluía brújula ni aplicación móvil.
 
 ## 🧩 Estructura del Código
 
-/sender/ -> Código para el ESP32 en el semáforo
-/pulsera_main/ -> Código para el ESP32 en la pulsera
-/android-app/ -> App Android (Kotlin/Java)
-/dashboard/ -> Panel web conectado a Firebas
+- /sender/ -> Código para el ESP32 en el semáforo
+- /pulsera_main/ -> Código para el ESP32 en la pulsera
+- /android-app/ -> App Android (Kotlin/Java)
+- /dashboard/ -> Panel web conectado a Firebas
 
 
 ---
