@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "861434259993",
+    "project_id": "acpi-tracker",
+    "storage_bucket": "acpi-tracker.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861434259993:android:fc960b15f9f0453da09888",
+        "android_client_info": {
+          "package_name": "com.example.acpigps"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFBVjg-T0HywwuTxMRdgQARiY6pVdhytA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
