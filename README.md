@@ -5,7 +5,8 @@ ACPI es un sistema IoT integral diseñado para brindar mayor autonomía y seguri
 ![Versión](https://img.shields.io/badge/versión-2.0.5-blue)  
 ![Estado](https://img.shields.io/badge/estado-en%20prototipo-yellow)  
 ![Licencia](https://img.shields.io/badge/licencia-MIT-green)<br>
-<img width="600" height="355" alt="image" src="https://github.com/user-attachments/assets/3d3c16ef-f4fe-4246-87d1-1e000d5f8a1c" />
+![Imagen de WhatsApp 2025-08-24 a las 17 07 42_836a65b4](https://github.com/user-attachments/assets/8ba188e7-b1ee-429c-b098-891932d6fb4b)
+
 
 
 ---
@@ -93,40 +94,13 @@ Smartphone Android con sensores magnéticos y de orientación.
 
 
 ---
-## ⚙️ Requisitos de hardware
-
-- 2 × ESP32 con WiFi + Bluetooth
-- Módulo vibrador (motor de vibración)
-- Batería recargable + módulo de carga
-- Protoboard o PCB impreso
-- Smartphone Android con sensores magnéticos y de orientación
-- Opcional: sensor de luz para detectar directamente el semáforo si se desea extender
-
----
 
 ## 🧩 Estructura del código
 
-- `/esp32-semaforo/`: Código para el ESP32 ubicado en el semáforo.
-- `/esp32-pulsera/`: Código para el ESP32 del usuario.
+- `/sender/`: Código para el ESP32 ubicado en el semáforo.
+- `/pulsera_main/`: Código para el ESP32 del usuario.
 - `/android-app/`: Aplicación Android Studio (Kotlin/Java).
-- `/docs/`: Diagramas de flujo, esquemas eléctricos y documentación adicional.
-
----
-
-## 🚧 Problemas actuales / En desarrollo
-
-- 🧠 Compatibilidad de ESP-NOW con BLE de forma simultánea (consumo de memoria y fallos de compilación).
-- 📦 Optimización del código para reducir el uso de memoria flash del ESP32.
-- 📏 Precisión de brújula en el bolsillo (recalibración de sensores, orientación no horizontal).
-- 🔋 Gestión eficiente de energía en la pulsera.
-
----
-
-## ✅ To-Do inmediato (04/08)
-- [ ] Probar ESP-NOW + BLE funcionando simultáneamente.
-- [ ] Conectar motor vibrador a la protoboard y verificar señal de vibración.
-- [ ] Realizar prueba básica de detección de semáforo y respuesta con vibración.
-- [ ] Verificar lectura de orientación del celular desde el bolsillo.
+- `/dashboard/:` Archivo HTML del panel de visualización de datos.
 
 ---
 
