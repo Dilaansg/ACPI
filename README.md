@@ -100,5 +100,5 @@ Se agradecen aportes en:
 
 ## 🧑‍💻 Autores
 Proyecto desarrollado por:  
-**Dilan Osorio, Andrea Cárdenas y Nicolás Rodríguez**  
+###**Dilan Osorio, Andrea Cárdenas y Nicolás Rodríguez**  
 📚 Asesoría: *Johanna Carolina Sánchez Ramírez*  
