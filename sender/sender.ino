@@ -1,18 +1,19 @@
 #include <esp_now.h>
 #include <WiFi.h>
 #include "estructura.h" // Incluimos la estructura de datos compartida
-#include "const.h"         // Archivo con la dirección MAC del receptor
+#include "const.h"      // Archivo con la dirección MAC del receptor
 
 // --- CONFIGURACIÓN DEL SEMÁFORO ---
 const int ldrPin = 34;
-const int UMBRAL_LUZ = 2500; // Ajusta este valor según tu LDR y la luz ambiente
+const int UMBRAL_LUZ = 1200; // Ajusta este valor según tu LDR y la luz ambiente
 const int anguloSemaforo = 90; // ¡IMPORTANTE! Define el ángulo de este semáforo (0, 90, 180, 270)
 
 // Variable para almacenar los datos a enviar
 esp_now_data_structure datosSemaforo;
 
-// Callback que se ejecuta cuando se ha enviado un mensaje
-void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
+// Modifica la firma de la función OnDataSent
+// Ahora el primer argumento debe ser const wifi_tx_info_t*
+void OnDataSent(const wifi_tx_info_t *txInfo, esp_now_send_status_t status) {
   Serial.print("\r\nEstado del último envío: ");
   Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Entrega Correcta" : "Fallo en la Entrega");
 }
@@ -49,7 +50,7 @@ void setup() {
 void loop() {
   // Leer el sensor de luz para determinar el estado del semáforo
   int ldrValue = analogRead(ldrPin);
-  
+  Serial.print(ldrValue);
   // Asignar estado: 1 para VERDE (luz detectada), 2 para ROJO (sin luz)
   datosSemaforo.estado = (ldrValue > UMBRAL_LUZ) ? 1 : 2;
   
