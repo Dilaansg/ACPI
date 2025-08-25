@@ -7,7 +7,8 @@ El sistema combina **hardware dedicado (ESP32)** y una **aplicación móvil inte
 ![Estado](https://img.shields.io/badge/estado-en%20prototipo-yellow)  
 ![Licencia](https://img.shields.io/badge/licencia-MIT-green)  
 
-<img src="https://github.com/user-attachments/assets/931d2c0d-2025-4e66-b3d7-121c94d1c3a1" alt="LOGO" width="200"/>
+<img src="(https://github.com/user-attachments/assets/91d38e34-a4c6-42f9-9617-e6a3b4039189)" alt="LOGO" width="200"/>
+
 
 
 
