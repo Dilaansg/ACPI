@@ -1,7 +1,7 @@
 # 🚦 ACPI: Asistente de Cruce Peatonal para Invidentes 👨‍🦯➡️
 
-**ACPI** es un sistema **IoT integral** diseñado para brindar **autonomía y seguridad** a personas con discapacidad visual al momento de cruzar intersecciones semaforizadas.  
-El sistema combina **hardware dedicado (ESP32)** y una **aplicación móvil inteligente** para crear una red de asistencia en tiempo real.
+**ACPI** es un sistema **IoT integral**, es decir un sistema de dispositivos interconectados, diseñado para brindar **autonomía y seguridad** a personas con discapacidad visual al momento de cruzar calles y vías semaforizados.  
+El sistema combina **hardware dedicado (El componente físico, en este caso el ESP32)** y una **aplicación móvil inteligente** para crear una red de asistencia en tiempo real.
 
 ![Versión](https://img.shields.io/badge/versión-2.0.5-blue)  
 ![Estado](https://img.shields.io/badge/estado-en%20prototipo-yellow)  
@@ -18,33 +18,33 @@ El sistema combina **hardware dedicado (ESP32)** y una **aplicación móvil inte
 
 ## ✨ Funcionalidades Principales
 
-El ecosistema de **ACPI** se compone de **tres elementos clave** que trabajan en sincronía:
+El entorno de **ACPI** se compone de **tres elementos clave** que trabajan en sincronía:
 
 ### 🧠 1. Cerebro del Semáforo (ESP32 Fijo)
 - **Misión:** Monitorear el estado del semáforo y comunicar cambios.  
-- **Tecnología:** Comunicación mediante **ESP-NOW**, rápida y de bajo consumo.  
+- **Tecnología:** Comunicación mediante **ESP-NOW** (Comunicación inalámbrica entre ESPs, que es más eficiente), rápida y de bajo consumo.  
 - **Información transmitida:** Estado del semáforo (ej. 🚦 *rojo para autos*) y ángulo de la vía.  
 
 ---
 
 ### 👋 2. Pulsera Inteligente (ESP32 Portátil)
 - **Misión:** Ser el **punto de contacto y alerta** para el usuario.  
-- **Comunicación dual:**  
+- **Comunicación dual (Entre dos puntos):**  
   - Recibe datos del semáforo vía **ESP-NOW**.  
-  - Retransmite información a la app vía **Bluetooth Low Energy (BLE)**.  
+  - Retransmite información a la app vía **Bluetooth Low Energy (Tecnología inalámbrica que permite comunicación, consumiendo poca energía, abreviado BLE)**.  
 - **Retroalimentación táctil:** Vibra únicamente cuando la app determina que es seguro cruzar.  
 
 ---
 
 ### 📱 3. Aplicación Móvil (Android)
-- **Siempre activa:** Corre en **Foreground Service** para funcionar incluso en segundo plano.  
+- **Siempre activa:** Corre en **Foreground Service** (Proceso que se ejecuta en segundo plano) para funcionar incluso cuando no esta en primer plano.  
 - **Sensores de alta precisión:**  
-  - 📍 **Brújula robusta** con filtro de media móvil.  
+  - 📍 **Brújula precisa** con filtro de media móvil, es decir para observar las tendencias de los datos y suavizarlos.  
   - 🚶 **Contador de pasos inteligente** que detecta movimiento real.  
 - **Lógica de decisión:**  
   - Vibra **solo si** el semáforo está en rojo para coches **y** el usuario está orientado correctamente.  
 - **Red de seguridad:**  
-  - Envía ubicación GPS a Telegram cada 15 minutos.  
+  - Envía ubicación GPS a Telegram (aplicación de mensajeria instantánea) cada 15 minutos.  
   - Alerta inmediata si el usuario sale de su **zona segura**.  
 - **Base de datos:** Guarda todos los viajes en **Firebase** para análisis posterior.  
 
@@ -53,7 +53,7 @@ El ecosistema de **ACPI** se compone de **tres elementos clave** que trabajan en
 ### 📊 Dashboard Web
 Una página **HTML sencilla** conectada a Firebase que permite:  
 - Listar todos los viajes registrados.  
-- Dibujar el trazado en un **mapa interactivo**.  
+- Dibujar el trazado del recorrido en un **mapa interactivo**.  
 - Marcar puntos con alertas de zona insegura.  
 
 ---
@@ -86,8 +86,8 @@ Este era más simple y no incluía brújula ni aplicación móvil.
 
 - /sender/ -> Código para el ESP32 en el semáforo
 - /pulsera_main/ -> Código para el ESP32 en la pulsera
-- /android-app/ -> App Android (Kotlin/Java)
-- /dashboard/ -> Panel web conectado a Firebas
+- /android-app/ -> App Android (Hecho en los lenguajes de programación de Kotlin/Java)
+- /dashboard/ -> Panel web conectado a Firebase
 
 
 ---
