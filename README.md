@@ -1,6 +1,6 @@
 # ACPI: Asistente de Cruce Peatonal para Invidentes 🚦👨‍🦯‍➡️
 
-Este proyecto tiene como objetivo brindar mayor autonomía y seguridad a personas invidentes al momento de cruzar una calle con semáforo. Utiliza dos dispositivos **ESP32**: uno ubicado en el semáforo y otro en una pulsera del usuario invidente. También se emplea una aplicación móvil Android que actúa como brújula, rastreador y comunicador con familiares del usuario.
+ACPI es un sistema IoT integral diseñado para brindar mayor autonomía y seguridad a personas con discapacidad visual al momento de cruzar intersecciones semaforizadas. El sistema combina hardware dedicado (dispositivos ESP32) y una aplicación móvil inteligente para crear una red de asistencia personal en tiempo real.
 
 ![Versión](https://img.shields.io/badge/versión-2.0.5-blue)  
 ![Estado](https://img.shields.io/badge/estado-en%20prototipo-yellow)  
@@ -10,26 +10,67 @@ Este proyecto tiene como objetivo brindar mayor autonomía y seguridad a persona
 
 ---
 
-## 🧠 Funcionalidades principales
+## Funcionalidades Principales
+### El ecosistema de ACPI se compone de tres elementos clave que trabajan en perfecta sincronía:
 
-### 📡 Comunicación entre ESP32 (ESP-NOW)
-- El ESP32 del semáforo transmite el estado del semáforo (verde/rojo) mediante **ESP-NOW**.
-- El ESP32 de la pulsera vibra al recibir señal de un semáforo cercano (~10 m de radio).
-- Señal de doble vibración (`tin-tin`) indica que un semáforo ha sido detectado.
+🧠 1. El Cerebro del Semáforo (Dispositivo ESP32 Fijo)
+Misión: Monitorear el estado del semáforo y comunicar cambios al entorno.
 
-### 📱 Interacción con el celular (BLE + sensores)
-- El ESP32 de la pulsera se conecta vía **Bluetooth Low Energy (BLE)** con el celular.
-- El celular:
-  - Detecta la orientación para saber si el usuario está bien ubicado para cruzar.
-  - Informa si el usuario debe esperar o puede avanzar.
-  - Permanece en el bolsillo y actúa como brújula de fondo.
+Tecnología: Utiliza el protocolo de comunicación inalámbrica ESP-NOW para transmitir datos de forma instantánea y de bajo consumo a la pulsera del usuario.
 
-### 📍 Localización y seguridad
-- La app Android envía automáticamente la ubicación en tiempo real cada 15 minutos vía Telegram a un familiar o contacto de confianza.
-- Se notifica la salida del usuario de un área definida como su hogar.
+Información Transmitida: Envía el estado actual del semáforo (ej. ROJO para los coches) y el ángulo de la vía que controla.
 
----
+👋 2. La Pulsera Inteligente (Dispositivo ESP32 Portátil)
+Misión: Ser el punto de contacto físico y de alerta para el usuario.
 
+Comunicación Dual:
+
+Recibe datos del semáforo vía ESP-NOW.
+
+Actúa como un puente, retransmitiendo esta información y comunicándose de forma bidireccional con la aplicación móvil a través de Bluetooth Low Energy (BLE).
+
+Retroalimentación Táctil: Contiene un motor que vibra de forma continua únicamente cuando la aplicación determina que es seguro para el usuario cruzar la calle.
+
+📱 3. La Aplicación Móvil (Android)
+Es el centro de control inteligente que procesa toda la información y toma las decisiones de seguridad.
+
+Siempre Activa en Segundo Plano: Funciona como un Foreground Service, garantizando que el monitoreo y la protección no se detengan, incluso con el teléfono en el bolsillo o la pantalla apagada.
+
+Sensores de Alta Precisión:
+
+Brújula Robusta: Utiliza un filtro de media móvil para suavizar las lecturas de los sensores, ofreciendo una dirección de caminata estable y eliminando "deslices" o temblores.
+
+Contador de Pasos Inteligente: Analiza la fuerza y el ritmo del movimiento para contar únicamente los pasos reales.
+
+Lógica de Decisión Inteligente:
+
+La vibración no es una alerta de peligro, sino una señal afirmativa de "permiso para cruzar".
+
+Se activa solo cuando se cumplen dos condiciones: el semáforo es seguro (coches en rojo) y el usuario está orientado para cruzar. Si alguna de las dos falla, la vibración se detiene al instante.
+
+Red de Seguridad y Análisis:
+
+Alertas a Telegram: Envía la ubicación GPS a un contacto de confianza cada 15 minutos y genera una alerta inmediata si el usuario sale de una "zona segura" predefinida.
+
+Recolección de Datos: Guarda un registro completo del trazado de cada viaje en una base de datos de Firebase, permitiendo un análisis posterior.
+
+📊 Panel de Visualización (Dashboard Web)
+Para complementar el sistema, se ha desarrollado un panel de control web. Es una página HTML simple que se conecta a la base de datos de Firebase y permite:
+
+Visualizar una lista de todos los viajes registrados.
+
+Seleccionar un viaje y dibujar su trazado completo sobre un mapa interactivo.
+
+Marcar los puntos exactos donde se generaron alertas de salida de la zona segura.
+
+⚙️ Requisitos de Hardware
+2 × ESP32 con WiFi y Bluetooth.
+
+Módulo vibrador (motor de vibración).
+
+Batería recargable y módulo de carga para la pulsera.
+
+Smartphone Android con sensores magnéticos y de orientación.
 ## 🧪 Prototipos Anteriores 
 - Antes de llegar a trabajar la versión final, realizamos un prototipo antiguo que consistía en el mismo funcionamiento pero en el ambiente de Microbit - Python. Este era más simple, ya que no contaba con el uso de brújula, ni la aplicación y estaba implementada en un bastón.
 🔗 
@@ -38,13 +79,13 @@ Este proyecto tiene como objetivo brindar mayor autonomía y seguridad a persona
 (Primer diseño del proyecto, usando microbit e implementandolo en el bastón)
 
 ### 📸 Capturas Actuales
-<img width="529" height="960" alt="image" src="https://github.com/user-attachments/assets/9a2ec6c0-0977-4555-b5bd-2af31e452708" /><br>
+<img width="602" height="536" alt="image" src="https://github.com/user-attachments/assets/e34938da-208f-4bd1-ba17-537f4fd0d4ba" /><br>
 (Referencia del diseño de la pulsera)
 
 <img width="529" alt="image" src="https://github.com/user-attachments/assets/de0256ff-53d7-4e37-957a-6dc584ca8b16" /><br>
 (Componente ESP32)
 
-<img  height="529" alt="image" src="https://github.com/user-attachments/assets/00307fd2-0fc5-4078-9920-436631502279" /><br>
+<img width="802" height="425" alt="image" src="https://github.com/user-attachments/assets/32727e58-22cc-4f1b-8db5-713ccf9a367d" /><br>
 (Referencia del diseño de la aplicación                )
 
 <img width="529" height="510" alt="image" src="https://github.com/user-attachments/assets/16a6f681-7dcb-4a7b-b878-278d1721fa58" /><br>
