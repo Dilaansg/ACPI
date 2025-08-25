@@ -7,8 +7,7 @@ El sistema combina **hardware dedicado (ESP32)** y una **aplicación móvil inte
 ![Estado](https://img.shields.io/badge/estado-en%20prototipo-yellow)  
 ![Licencia](https://img.shields.io/badge/licencia-MIT-green)  
 
-<img src="(https://github.com/user-attachments/assets/91d38e34-a4c6-42f9-9617-e6a3b4039189)" alt="LOGO" width="200"/>
-
+<img src="https://github.com/user-attachments/assets/21b5f45c-7d78-40fb-b36d-10fb464cb1c8" alt="LOGO ACPI" width="200"/>
 
 
 
