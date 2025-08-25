@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACPI GPS - Panel de Trazado</title>
+    
+    <!-- Tailwind CSS para un diseño moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Leaflet.js para el mapa interactivo -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <style>
+        /* Asegura que el mapa ocupe el espacio disponible */
+        #map { height: 75vh; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="flex flex-col sm:flex-row items-center justify-between mb-6">
+            <h1 class="text-3xl font-bold text-indigo-400 mb-4 sm:mb-0">Panel de Trazado ACPI</h1>
+            <div class="flex items-center space-x-4">
+                <label for="tripSelector" class="text-gray-400">Viaje de Demostración:</label>
+                <select id="tripSelector" class="bg-gray-800 border border-gray-700 rounded-md px-3 py-2 text-white">
+                    <option>Viaje a Portal Américas</option>
+                </select>
+            </div>
+        </header>
+
+        <div id="map" class="bg-gray-800 rounded-lg shadow-lg z-0"></div>
+    </div>
+
+    <script>
+        // --- INICIALIZACIÓN DEL MAPA ---
+        const map = L.map('map').setView([4.6293126, -74.189397], 15); // Centrado en el punto de inicio
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // --- LÓGICA DE DEMOSTRACIÓN (SIN FIREBASE) ---
+
+        function displaySimulatedTrip() {
+            // Datos del viaje simulado desde el punto de inicio hasta el Portal Américas
+            const simulatedPoints = [
+                { latitude: 4.6293126, longitude: -74.189397, event: "TRACK" }, // Punto de inicio
+                { latitude: 4.629850, longitude: -74.187600, event: "TRACK" },
+                { latitude: 4.630400, longitude: -74.185800, event: "TRACK" },
+                { latitude: 4.630950, longitude: -74.184000, event: "TRACK" },
+                { latitude: 4.631500, longitude: -74.182200, event: "TRACK" },
+                { latitude: 4.631900, longitude: -74.180400, event: "GEOFENCE_EXIT" }, // Simulación de alerta
+                { latitude: 4.632350, longitude: -74.178600, event: "TRACK" },
+                { latitude: 4.632800, longitude: -74.176800, event: "TRACK" },
+                { latitude: 4.633250, longitude: -74.175000, event: "TRACK" },
+                { latitude: 4.634129, longitude: -74.172935, event: "TRACK" }  // Portal Américas (Aprox.)
+            ];
+
+            const latLngs = [];
+            
+            simulatedPoints.forEach(point => {
+                const latLng = [point.latitude, point.longitude];
+                latLngs.push(latLng);
+
+                // Si es un evento de geocerca, añadir un marcador especial
+                if (point.event === "GEOFENCE_EXIT") {
+                    const alertMarker = L.circleMarker(latLng, {
+                        radius: 8,
+                        color: 'red',
+                        fillColor: '#f03',
+                        fillOpacity: 0.8
+                    }).addTo(map);
+                    alertMarker.bindPopup("<b>¡Alerta!</b><br>Salida de la zona segura.");
+                }
+            });
+
+            // Dibujar un marcador de inicio y fin
+            L.marker(latLngs[0]).addTo(map).bindPopup("<b>Inicio del Viaje</b>");
+            L.marker(latLngs[latLngs.length - 1]).addTo(map).bindPopup("<b>Fin del Viaje</b><br>Portal Américas");
+
+            // Dibujar la línea del trazado
+            const polyline = L.polyline(latLngs, { color: 'indigo', weight: 5 }).addTo(map);
+
+            // Ajustar el zoom del mapa para que se vea todo el trazado
+            map.fitBounds(polyline.getBounds(), { padding: [50, 50] });
+        }
+
+        // Cargar el viaje de demostración al iniciar la página
+        window.onload = displaySimulatedTrip;
+
+    </script>
+</body>
+</html>
